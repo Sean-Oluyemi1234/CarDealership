@@ -1,9 +1,11 @@
 package ie.setu
 
+import ie.setu.Controllers.CarAPI
+import ie.setu.Models.Car
 import java.lang.System.exit
 import  ie.setu.readIntNotNull
 import io.github.oshai.kotlinlogging.KotlinLogging
-
+private val carAPI = CarAPI()
 private val logger = KotlinLogging.logger {}
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -41,24 +43,39 @@ fun runMenu() {
 }
 
 fun addCar(){
-    logger.info { "addCar() function invoked" }
+    fun addNote(){
+        val CarTitle = readNextLine("Enter a Name for the Car: ")
+        val CarPriority = readNextInt("Enter a priority (1-low, 2, 3, 4, 5-high): ")
+        val CarModel = readNextLine("Enter a category for the note: ")
+        val isAdded = carAPI.add(Car(CarTitle, CarPriority, CarModel, false))
+
+        if (isAdded) {
+            println("Added Successfully")
+        } else {
+            println("Add Failed")
+        }
+    }
 }
 
-fun viewCars(){
-    logger.info { "viewCars() function invoked" }
+
+    fun viewCars(){
+1
+        fun viewCars(){
+            println(carAPI.viewCars())
+        }
 }
 
 fun searchCarModel(){
-    logger.info { "searchCarModel() function invoked" }
+
 
 }
 
 fun deleteCar(){
-    logger.info { "deleteCar() function invoked" }
+
 }
 
 fun exitApp(){
-    logger.info { "exitApp() function invoked" }
+
     exit(0)
 }
 
