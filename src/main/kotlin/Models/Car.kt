@@ -2,8 +2,8 @@ package ie.setu.Models
 
 
 
-data class Note(val noteTitle: String,
-                val notePriority: Int,
-                val noteCategory: String,
+data class Car(val CarTitle: String,
+                val CarPriority: Int,
+                val CarModel: String,
                 val isNoteArchived :Boolean){
 }
