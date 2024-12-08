@@ -1,8 +1,10 @@
 package ie.setu
+
 import java.lang.System.exit
 import  ie.setu.readIntNotNull
+import io.github.oshai.kotlinlogging.KotlinLogging
 
-
+private val logger = KotlinLogging.logger {}
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
@@ -39,23 +41,24 @@ fun runMenu() {
 }
 
 fun addCar(){
-    println("You chose Add Car")
+    logger.info { "addCar() function invoked" }
 }
 
 fun viewCars(){
-    println("You chose View Cars")
+    logger.info { "viewCars() function invoked" }
 }
 
 fun searchCarModel(){
-    println("You chose Search Car by Reg No")
+    logger.info { "searchCarModel() function invoked" }
+
 }
 
 fun deleteCar(){
-    println("You chose Delete Car")
+    logger.info { "deleteCar() function invoked" }
 }
 
 fun exitApp(){
-    println("Exiting...bye")
+    logger.info { "exitApp() function invoked" }
     exit(0)
 }
 
